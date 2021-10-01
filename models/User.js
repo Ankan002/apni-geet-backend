@@ -40,9 +40,9 @@ const userSchema = new Schema({
         type: Number,
         default: 0
     },
-    follower: {
-        type: Number,
-        default: 0
+    followedplaylists: {
+        type: Array,
+        default: []
     }
 }, {timestamps: true})
 

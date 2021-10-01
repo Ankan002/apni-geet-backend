@@ -13,6 +13,10 @@ const songRoutes = require('./routes/song')
 const playlistRoutes= require('./routes/playlist')
 const userRoutes= require('./routes/user')
 const songLikeRoutes= require('./routes/userSongsLikeRelation')
+const playlistFollowRoutes= require('./routes/userPlaylistFollowRelation')
+
+//Declaring the PORT number
+const port = process.env.PORT || 8000
 
 //DataBase Connection
 connectToMongo()
@@ -29,9 +33,8 @@ app.use('/api', songRoutes)
 app.use('/api', playlistRoutes)
 app.use('/api', userRoutes)
 app.use('/api', songLikeRoutes)
+app.use('/api', playlistFollowRoutes)
 
-//Declaring the PORT number
-const port = process.env.PORT || 8000
 
 //Running Port
 app.listen(port, () => console.log(`Running at ${port}`))

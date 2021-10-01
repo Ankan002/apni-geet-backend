@@ -11,9 +11,7 @@ exports.updateLikes = async (req, res) => {
         const user= await User.findById(userId)
         const song= await Song.findById(songId)
         let currentLikedSongsArray= user.likedsongs
-        
-
-        //TODO: update number of likes in the song schema as well
+    
 
         if(currentLikedSongsArray.includes(songId)){
             currentLikedSongsArray = removeElementsFromArray(currentLikedSongsArray, songId)
